@@ -6,11 +6,12 @@ data "huaweicloud_availability_zones" "zones" {
 locals {
   name               = var.name_postfix == null ? format("%s-rocketmq", var.name) : format("%s-rocketmq-%s", var.name, var.name_postfix)
   availability_zones = length(var.availability_zones) == 0 ? slice(data.huaweicloud_availability_zones.zones.names, 0, var.single_az ? 1 : 3) : var.availability_zones
-
 }
 
 
 resource "huaweicloud_dms_rocketmq_instance" "main" {
+  count = var.rocketmq_instance_id == null ? 0 : 1
+
   name               = local.name
   description        = var.description
   region             = var.region
@@ -35,7 +36,7 @@ resource "huaweicloud_dms_rocketmq_instance" "main" {
 resource "huaweicloud_dms_rocketmq_topic" "main" {
   for_each = var.topics
 
-  instance_id           = huaweicloud_dms_rocketmq_instance.main.id
+  instance_id           = var.rocketmq_instance_id == null ? huaweicloud_dms_rocketmq_instance.main.0.id : var.rocketmq_instance_id
   name                  = each.key
   region                = var.region
   queue_num             = each.value.queue_num
@@ -55,11 +56,17 @@ resource "huaweicloud_dms_rocketmq_topic" "main" {
 resource "huaweicloud_dms_rocketmq_consumer_group" "main" {
   for_each = var.consumer_groups
 
-  instance_id     = huaweicloud_dms_rocketmq_instance.main.id
+  instance_id     = var.rocketmq_instance_id == null ? huaweicloud_dms_rocketmq_instance.main.0.id : var.rocketmq_instance_id
   name            = each.key
   region          = var.region
   enabled         = each.value.enabled
   broadcast       = each.value.broadcast
   brokers         = each.value.brokers
   retry_max_times = each.value.retry_max_times
+}
+
+
+moved {
+  from = huaweicloud_dms_rocketmq_instance.main
+  to   = huaweicloud_dms_rocketmq_instance.main.0
 }

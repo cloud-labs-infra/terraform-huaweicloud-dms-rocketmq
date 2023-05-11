@@ -1,7 +1,6 @@
 variable "name" {
   description = "Specifies the name of the DMS RocketMQ instance"
   type        = string
-  nullable    = false
 }
 
 variable "name_postfix" {
@@ -25,19 +24,16 @@ variable "region" {
 variable "vpc_id" {
   description = "Specifies the ID of a VPC"
   type        = string
-  nullable    = false
 }
 
 variable "subnet_id" {
   description = "Specifies the ID of a subnet"
   type        = string
-  nullable    = false
 }
 
 variable "security_group_id" {
   description = "Specifies the ID of a security group"
   type        = string
-  nullable    = false
 }
 
 variable "engine_version" {
@@ -126,6 +122,12 @@ variable "enable_publicip" {
   description = "Specifies whether to enable public access"
   type        = bool
   default     = false
+}
+
+variable "rocketmq_instance_id" {
+  description = "Specifies the ID of Rocketmq instance, if it sets, Rocketmq instance won't be created"
+  type        = string
+  default     = null
 }
 
 variable "broker_num" {
