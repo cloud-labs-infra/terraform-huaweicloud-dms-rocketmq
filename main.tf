@@ -10,7 +10,7 @@ locals {
 
 
 resource "huaweicloud_dms_rocketmq_instance" "main" {
-  count = var.rocketmq_instance_id == null ? 0 : 1
+  count = var.rocketmq_instance_id == null ? 1 : 0
 
   name               = local.name
   description        = var.description
