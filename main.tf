@@ -4,8 +4,8 @@ data "huaweicloud_availability_zones" "zones" {
 
 
 locals {
-  name               = var.name_postfix == null ? format("%s-rocketmq", var.name) : format("%s-rocketmq-%s", var.name, var.name_postfix)
-  availability_zones = length(var.availability_zones) == 0 ? slice(data.huaweicloud_availability_zones.zones.names, 0, var.single_az ? 1 : 3) : var.availability_zones
+  name               = var.rocketmq_instance_id == null ? (var.name_postfix == null ? format("%s-rocketmq", var.name) : format("%s-rocketmq-%s", var.name, var.name_postfix)) : null
+  availability_zones = var.rocketmq_instance_id == null ? length(var.availability_zones) == 0 ? slice(data.huaweicloud_availability_zones.zones.names, 0, var.single_az ? 1 : 3) : var.availability_zones : null
 }
 
 
