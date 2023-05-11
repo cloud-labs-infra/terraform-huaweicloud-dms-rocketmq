@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.1](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/compare/v1.1.0...v1.1.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* Fix condition for DMS Instance creation ([#3](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/issues/3)) ([3167745](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/commit/316774537d542eb2991ec3c8d1c1340b61f3945f))
+
 ## [1.1.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/compare/v1.0.0...v1.1.0) (2023-05-11)
 
 
