@@ -43,6 +43,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Specifies the name of the DMS RocketMQ instance | `string` | n/a | yes |
 | <a name="input_name_postfix"></a> [name\_postfix](#input\_name\_postfix) | Specifies the name postfix of the DMS RocketMQ instance | `string` | `null` | no |
 | <a name="input_region"></a> [region](#input\_region) | Specifies the region in which to create the resource, if omitted, the provider-level region will be used | `string` | `null` | no |
+| <a name="input_rocketmq_instance_id"></a> [rocketmq\_instance\_id](#input\_rocketmq\_instance\_id) | Specifies the ID of Rocketmq instance, if it sets, Rocketmq instance won't be created | `string` | `null` | no |
 | <a name="input_security_group_id"></a> [security\_group\_id](#input\_security\_group\_id) | Specifies the ID of a security group | `string` | n/a | yes |
 | <a name="input_single_az"></a> [single\_az](#input\_single\_az) | All instances in the same availability zone.<br>  **The more AZs selected, the better the reliability and SLA coverage.** | `bool` | `false` | no |
 | <a name="input_ssl_enable"></a> [ssl\_enable](#input\_ssl\_enable) | Specifies whether the RocketMQ SASL\_SSL is enabled | `bool` | `false` | no |
