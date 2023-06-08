@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/compare/v1.1.2...v1.2.0) (2023-06-08)
+
+
+### Features
+
+* Add default total Read and Write Queue num ([#5](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/issues/5)) ([b8b5322](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/commit/b8b532293af48c66f4c7f901e8b4f7254de084b5))
+
 ### [1.1.2](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/compare/v1.1.1...v1.1.2) (2023-05-11)
 
 
