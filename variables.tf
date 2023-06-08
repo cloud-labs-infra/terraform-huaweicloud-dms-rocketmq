@@ -155,8 +155,8 @@ variable "topics" {
   type = map(object({
     queue_num             = optional(number, 8)
     permission            = optional(string, "all")
-    total_read_queue_num  = optional(number, null)
-    total_write_queue_num = optional(number, null)
+    total_read_queue_num  = optional(number, 3)
+    total_write_queue_num = optional(number, 3)
     brokers               = optional(list(string), ["broker-0"])
   }))
   default = {}
