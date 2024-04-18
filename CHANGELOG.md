@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/compare/v1.2.0...v1.3.0) (2024-04-18)
+
+
+### Features
+
+* Update version of tf and providers ([#9](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/issues/9)) ([7e547df](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/commit/7e547df272a5c88cb998120428a4351089c518aa))
+
 ## [1.2.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-dms-rocketmq/compare/v1.1.2...v1.2.0) (2023-06-08)
 
 
